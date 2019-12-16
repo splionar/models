@@ -256,6 +256,7 @@ class WeightedSigmoidClassificationLoss(Loss):
     ####
     import json
     import numpy as np
+    import cv2
     
     with open('/content/drive/My Drive/objdet/dt_locational_weights.json') as json_file:
         data = json.load(json_file)
