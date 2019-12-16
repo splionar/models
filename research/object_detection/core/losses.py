@@ -254,6 +254,8 @@ class WeightedSigmoidClassificationLoss(Loss):
     class_weights = tf.tile(class_weights,[num_anchor,1])
     class_weights = tf.expand_dims(class_weights,0)
     ####
+    import json
+    import numpy as np
     
     with open('/content/drive/My Drive/objdet/dt_locational_weights.json') as json_file:
         data = json.load(json_file)
