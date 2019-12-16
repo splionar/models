@@ -275,6 +275,7 @@ class WeightedSigmoidClassificationLoss(Loss):
     ones = [1.] * (2034 - len(flattened))
     localization_list = flattened + ones
     localization_weight = tf.convert_to_tensor(localization_list)
+    localization_weight = tf.expand_dims(localization_weight, axis=-1)
     
     per_entry_cross_ent = (tf.nn.sigmoid_cross_entropy_with_logits(
         labels=target_tensor, logits=prediction_tensor))
